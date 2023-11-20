@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:malpani/constants/constants.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:malpani/screen/homepage/controller/HomePageController.dart';
 import 'package:malpani/widget/HomePageTile.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,6 +12,18 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool x = true;
+  final HomePageController controller = HomePageController();
+
+  @override
+  void initState() {
+    print(
+      dotenv.env['API_URL'],
+    );
+    controller.fetchAllTasks();
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(

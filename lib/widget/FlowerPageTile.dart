@@ -50,16 +50,17 @@ class FlowerPageTile extends StatelessWidget {
                   children: [
                     Text(
                       "Rose",
-                      style: TextStyle(fontSize: 20, fontStyle: FontStyle.italic),
+                      style:
+                          TextStyle(fontSize: 20, fontStyle: FontStyle.italic),
                     ),
                     SizedBox(
                       height: 3,
                     ),
                     Text(
                       "100 rs / 1000 flowers",
-                      style: TextStyle(fontSize: 15, fontStyle: FontStyle.italic),
+                      style:
+                          TextStyle(fontSize: 15, fontStyle: FontStyle.italic),
                     ),
-
                   ],
                 )
               ],
