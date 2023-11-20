@@ -77,6 +77,11 @@ flutter:
    - family: CuteFont
      fonts:
        - asset: fonts/CuteFont.ttf
+
+   - family: KDam
+     fonts:
+       - asset: fonts/Kdam.ttf
+  
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

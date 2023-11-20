@@ -17,7 +17,7 @@ class HomePageTile extends StatelessWidget {
     int randomNumber = random.nextInt(4) + 1;
     return GestureDetector(
       onTap: () {
-        if (index < pageNames.length && pageNames[index] != null) {
+        if (index < pageNames.length) {
           Get.toNamed(pageNames[index]);
         }
       },
@@ -27,6 +27,7 @@ class HomePageTile extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 12.0),
           child: Container(
+            width: Get.width * 0.4,
             padding:
                 const EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
             decoration: BoxDecoration(
