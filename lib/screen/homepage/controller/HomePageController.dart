@@ -7,6 +7,11 @@ import 'package:malpani/model/ItemModel.dart';
 class HomePageController extends GetxController {
   RxList<Item> itemsList = <Item>[].obs;
   RxList<Item> stageAndDecorList = <Item>[].obs;
+  RxList<Item> lightAndSoundList = <Item>[].obs;
+  RxList<Item> stationaryAndPrintingList = <Item>[].obs;
+  RxList<Item> giftingAndMomentosList = <Item>[].obs;
+  RxList<Item> eventGoodiesList = <Item>[].obs;
+  RxList<Item> servicesList = <Item>[].obs;
 
   Future<void> fetchAllTasks() async {
     try {
@@ -35,7 +40,7 @@ class HomePageController extends GetxController {
 
   void updateItemList(List<dynamic> items) {
     items.forEach((item) {
-      if (item != null && item['category'] == 'StageAndDecore') {
+      if (item != null) {
         Item newItem = Item(
           name: item['name'] ?? '',
           price: item['price'] ?? 0,
@@ -44,9 +49,21 @@ class HomePageController extends GetxController {
           subCategory: item['subCategory'] ?? '',
           image: item['image'] ?? '',
         );
-        stageAndDecorList.add(newItem);
+
+        if (item['category'] == 'StageAndDecore') {
+          stageAndDecorList.add(newItem);
+        } else if (item['category'] == 'LightsAndSound') {
+          lightAndSoundList.add(newItem);
+        } else if (item['category'] == 'StationaryAndPrinting') {
+          stationaryAndPrintingList.add(newItem);
+        } else if (item['category'] == 'GiftingAndMomentos') {
+          giftingAndMomentosList.add(newItem);
+        } else if (item['category'] == 'EventGoodies') {
+          eventGoodiesList.add(newItem);
+        } else if (item['category'] == 'Services') {
+          servicesList.add(newItem);
+        }
       }
     });
-    print(stageAndDecorList);
   }
 }
