@@ -17,12 +17,12 @@ class _LandingPageState extends State<LandingPage> {
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           // mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              height: Get.height * 0.15,
-            ),
             const Align(
+                child: Hero(
+              tag: "title",
               child: Text(
                 "Malpani Decors",
                 style: TextStyle(
@@ -30,10 +30,7 @@ class _LandingPageState extends State<LandingPage> {
                     fontSize: 30,
                     fontWeight: FontWeight.bold),
               ),
-            ),
-            SizedBox(
-              height: Get.height * 0.2,
-            ),
+            )),
             DefaultTextStyle(
               style: const TextStyle(
                 fontSize: 40.0,
@@ -58,52 +55,53 @@ class _LandingPageState extends State<LandingPage> {
                 },
               ),
             ),
-            SizedBox(
-              height: Get.height * 0.1,
-            ),
-            const Text(
-              "One Stop Solution for all events",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: Get.height * 0.05,
-            ),
-            GestureDetector(
-              onTap: () {
-                Get.toNamed('/home');
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 236, 100, 104),
-                  borderRadius: BorderRadius.circular(20.0),
-                  border: const Border(
-                    top: BorderSide(
-                      color: Colors.black,
-                      width: 2.0,
+            Column(
+              children: [
+                const Text(
+                  "One Stop Solution for all events",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed('/home');
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 236, 100, 104),
+                      borderRadius: BorderRadius.circular(20.0),
+                      border: const Border(
+                        top: BorderSide(
+                          color: Colors.black,
+                          width: 2.0,
+                        ),
+                        bottom: BorderSide(
+                          color: Colors.black,
+                          width: 4.0,
+                        ),
+                        left: BorderSide(
+                          color: Colors.black,
+                          width: 2.0,
+                        ),
+                        right: BorderSide(
+                          color: Colors.black,
+                          width: 4.0,
+                        ),
+                      ),
                     ),
-                    bottom: BorderSide(
-                      color: Colors.black,
-                      width: 4.0,
-                    ),
-                    left: BorderSide(
-                      color: Colors.black,
-                      width: 2.0,
-                    ),
-                    right: BorderSide(
-                      color: Colors.black,
-                      width: 4.0,
+                    child: const Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        "Let's Explore",
+                        style: TextStyle(fontSize: 15),
+                      ),
                     ),
                   ),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Text(
-                    "Let's Explore",
-                    style: TextStyle(fontSize: 15),
-                  ),
-                ),
-              ),
-            ),
+              ],
+            )
           ],
         ),
       ),

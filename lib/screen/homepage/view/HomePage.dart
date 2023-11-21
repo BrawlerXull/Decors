@@ -36,12 +36,15 @@ class _HomePageState extends State<HomePage> {
             const Align(
               child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 15.0),
-                child: Text(
-                  'Malpani Decors',
-                  style: TextStyle(
-                      fontSize: 50,
-                      fontFamily: 'CuteFont',
-                      color: Color(0xFF66545e)),
+                child: Hero(
+                  tag: "title",
+                  child: Text(
+                    'Malpani Decors',
+                    style: TextStyle(
+                        fontSize: 50,
+                        fontFamily: 'CuteFont',
+                        color: Color(0xFF66545e)),
+                  ),
                 ),
               ),
             ),

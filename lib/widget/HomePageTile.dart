@@ -65,12 +65,9 @@ class HomePageTile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 if (index < images.length && images[index] != null)
-                  Hero(
-                    tag: index.toString(),
-                    child: Image.asset(
-                      images[index],
-                      height: 100,
-                    ),
+                  Image.asset(
+                    images[index],
+                    height: 100,
                   ),
                 const SizedBox(height: 12),
                 Text(
