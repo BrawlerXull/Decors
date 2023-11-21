@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'dart:math';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import '../constants/constants.dart';
@@ -17,7 +19,7 @@ class HomePageTile extends StatelessWidget {
     int randomNumber = random.nextInt(4) + 1;
     return GestureDetector(
       onTap: () {
-        if (index < pageNames.length && pageNames[index] != null) {
+        if (index < pageNames.length) {
           Get.toNamed(pageNames[index]);
         }
       },
@@ -27,6 +29,7 @@ class HomePageTile extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 12.0),
           child: Container(
+            width: Get.width * 0.4,
             padding:
                 const EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
             decoration: BoxDecoration(
@@ -62,12 +65,9 @@ class HomePageTile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 if (index < images.length && images[index] != null)
-                  Hero(
-                    tag: index.toString(),
-                    child: Image.asset(
-                      images[index],
-                      height: 100,
-                    ),
+                  Image.asset(
+                    images[index],
+                    height: 100,
                   ),
                 const SizedBox(height: 12),
                 Text(

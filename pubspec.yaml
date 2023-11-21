@@ -36,6 +36,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   get: ^4.6.5
+  flutter_dotenv: ^5.1.0
+  http: ^1.1.0
+  animated_text_kit: ^4.2.2
 
 dev_dependencies:
   flutter_test:
@@ -61,6 +64,7 @@ flutter:
 
   assets:
     - assets/
+    - .env
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -77,6 +81,11 @@ flutter:
    - family: CuteFont
      fonts:
        - asset: fonts/CuteFont.ttf
+
+   - family: KDam
+     fonts:
+       - asset: fonts/Kdam.ttf
+  
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

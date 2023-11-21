@@ -24,7 +24,6 @@ List<String> images = [
   "assets/catering.png",
 ];
 
-List<String> pageNames = [
-  "/flower",
-  "/chair"
-];
+List<String> pageNames = ["/flower", "/chair"];
+
+String kApiUrl = "http://localhost:3001/all";
