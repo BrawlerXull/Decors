@@ -7,9 +7,13 @@ import 'package:malpani/screen/more/controller/ShoppingCartController.dart';
 class More extends StatefulWidget {
   final String title;
   final List<Item> itemList;
-  final ShoppingCartController cartController = ShoppingCartController();
+  final ShoppingCartController cartController;
 
-  More({Key? key, required this.title, required this.itemList})
+  More(
+      {Key? key,
+      required this.title,
+      required this.itemList,
+      required this.cartController})
       : super(key: key);
 
   @override
@@ -30,7 +34,7 @@ class _MoreState extends State<More> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            height: 500,
+            height: 700,
             child: ListView.builder(
               itemCount: widget.itemList.length,
               itemBuilder: (BuildContext context, int index) {

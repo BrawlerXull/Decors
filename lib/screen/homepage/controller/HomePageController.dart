@@ -141,6 +141,113 @@ class HomePageController extends GetxController {
     ),
   ].obs;
   RxList<Item> giftingAndMomentosList = <Item>[].obs;
-  RxList<Item> eventGoodiesList = <Item>[].obs;
-  RxList<Item> servicesList = <Item>[].obs;
+  RxList<Item> eventGoodiesList = <Item>[
+    Item(
+      name: "Hoodies with Print Sample",
+      price: 40.0,
+      isAvailable: true,
+      category: "EventGoodies",
+      subCategory: "Hoodies with Print",
+      image: "hoodies_with_print_image_url",
+    ),
+    Item(
+      name: "T-shirts with Print Sample",
+      price: 20.0,
+      isAvailable: false,
+      category: "EventGoodies",
+      subCategory: "T-shirts with Print",
+      image: "tshirts_with_print_image_url",
+    ),
+    Item(
+      name: "Hoodies without Print Sample",
+      price: 35.0,
+      isAvailable: true,
+      category: "EventGoodies",
+      subCategory: "Hoodies without Print",
+      image: "hoodies_without_print_image_url",
+    ),
+    Item(
+      name: "T-shirts without Print Sample",
+      price: 15.0,
+      isAvailable: true,
+      category: "EventGoodies",
+      subCategory: "T-shirts without Print",
+      image: "tshirts_without_print_image_url",
+    ),
+    Item(
+      name: "Badges Sample",
+      price: 2.0,
+      isAvailable: true,
+      category: "EventGoodies",
+      subCategory: "Badges",
+      image: "badges_image_url",
+    ),
+    Item(
+      name: "Jerseys Sample",
+      price: 25.0,
+      isAvailable: false,
+      category: "EventGoodies",
+      subCategory: "Jerseys",
+      image: "jerseys_image_url",
+    ),
+    Item(
+      name: "Medals Sample",
+      price: 8.0,
+      isAvailable: true,
+      category: "EventGoodies",
+      subCategory: "Medals",
+      image: "medals_image_url",
+    ),
+    Item(
+      name: "Certificates Sample",
+      price: 5.0,
+      isAvailable: true,
+      category: "EventGoodies",
+      subCategory: "Certificates",
+      image: "certificates_image_url",
+    ),
+  ].obs;
+
+  RxList<Item> servicesList = <Item>[
+    Item(
+      name: "Poster Designing Service",
+      price: 100.0,
+      isAvailable: true,
+      category: "Services",
+      subCategory: "Poster Designing",
+      image: "poster_designing_service_image_url",
+    ),
+    Item(
+      name: "Photography Service",
+      price: 500.0,
+      isAvailable: false,
+      category: "Services",
+      subCategory: "Photography",
+      image: "photography_service_image_url",
+    ),
+    Item(
+      name: "Videography Service",
+      price: 800.0,
+      isAvailable: true,
+      category: "Services",
+      subCategory: "Videography",
+      image: "videography_service_image_url",
+    ),
+    Item(
+      name: "Judges Service",
+      price: 1000.0,
+      isAvailable: true,
+      category: "Services",
+      subCategory: "Judges",
+      image: "judges_service_image_url",
+    ),
+    Item(
+      name: "Artists Service",
+      price: 1200.0,
+      isAvailable: false,
+      category: "Services",
+      subCategory: "Artists",
+      image: "artists_service_image_url",
+    ),
+  ].obs;
 }

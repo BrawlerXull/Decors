@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:malpani/screen/homepage/controller/HomePageController.dart';
+import 'package:malpani/screen/more/controller/ShoppingCartController.dart';
 import 'package:malpani/screen/more/view/More.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,6 +13,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final HomePageController controller = HomePageController();
+  final ShoppingCartController shoppingCartController =
+      ShoppingCartController();
 
   @override
   void initState() {
@@ -66,6 +69,7 @@ class _HomePageState extends State<HomePage> {
                               builder: (context) => More(
                                 title: "Stage & Decore",
                                 itemList: controller.stageAndDecorList,
+                                cartController: shoppingCartController,
                               ),
                             ),
                           );
@@ -126,6 +130,7 @@ class _HomePageState extends State<HomePage> {
                               builder: (context) => More(
                                 title: "Stage & Decore",
                                 itemList: controller.stationaryAndPrintingList,
+                                cartController: shoppingCartController,
                               ),
                             ),
                           );
@@ -150,6 +155,64 @@ class _HomePageState extends State<HomePage> {
                         borderRadius: BorderRadius.circular(10.0),
                         child: Image.asset(
                           controller.stationaryAndPrintingList[index].image,
+                          width: 300,
+                          height: 80,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        "Event Goodies",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 0, 0, 0),
+                        ),
+                      ),
+                      GestureDetector(
+                        child: Text("More"),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => More(
+                                title: "Stage & Decore",
+                                itemList: controller.eventGoodiesList,
+                                cartController: shoppingCartController,
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              SizedBox(
+                height: 200,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: controller.eventGoodiesList.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: Image.asset(
+                          controller.eventGoodiesList[index].image,
                           width: 300,
                           height: 80,
                           fit: BoxFit.cover,
