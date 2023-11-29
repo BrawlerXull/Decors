@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                       const Text(
                         "Stage & Decore",
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Color.fromARGB(255, 0, 0, 0),
                         ),
@@ -90,6 +90,66 @@ class _HomePageState extends State<HomePage> {
                         borderRadius: BorderRadius.circular(10.0),
                         child: Image.asset(
                           controller.stageAndDecorList[index].image,
+                          width: 300,
+                          height: 80,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        "Stationary & Printing",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 0, 0, 0),
+                        ),
+                      ),
+                      GestureDetector(
+                        child: Text("More"),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => More(
+                                title: "Stage & Decore",
+                                itemList: controller.stationaryAndPrintingList,
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              SizedBox(
+                height: 200,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: controller.stationaryAndPrintingList.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: Image.asset(
+                          controller.stationaryAndPrintingList[index].image,
                           width: 300,
                           height: 80,
                           fit: BoxFit.cover,
