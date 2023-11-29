@@ -1,6 +1,6 @@
 class Item {
   String name;
-  int price;
+  double price;
   bool isAvailable;
   String category;
   String subCategory;
