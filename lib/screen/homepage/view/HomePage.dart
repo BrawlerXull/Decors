@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:malpani/screen/homepage/controller/HomePageController.dart';
+import 'package:malpani/screen/more/view/More.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key});
@@ -40,14 +42,14 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              const Align(
+              Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         "Stage & Decore",
                         style: TextStyle(
                           fontSize: 25,
@@ -55,15 +57,28 @@ class _HomePageState extends State<HomePage> {
                           color: Color.fromARGB(255, 0, 0, 0),
                         ),
                       ),
-                      Text("More")
+                      GestureDetector(
+                        child: Text("More"),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => More(
+                                title: "Stage & Decore",
+                                itemList: controller.stageAndDecorList,
+                              ),
+                            ),
+                          );
+                        },
+                      ),
                     ],
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Container(
+              SizedBox(
                 height: 200,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,

@@ -8,7 +8,7 @@ class HomePageController extends GetxController {
   RxList<Item> itemsList = <Item>[].obs;
   RxList<Item> stageAndDecorList = <Item>[
     Item(
-      name: "Event Stage Sample",
+      name: "Event Stage",
       price: 500.0,
       isAvailable: true,
       category: "StageAndDecore",
@@ -16,7 +16,7 @@ class HomePageController extends GetxController {
       image: "assets/stage.jpg",
     ),
     Item(
-      name: "Pandal & Fencing Sample",
+      name: "Pandal & Fencing",
       price: 300.0,
       isAvailable: true,
       category: "StageAndDecore",
@@ -24,7 +24,7 @@ class HomePageController extends GetxController {
       image: "assets/pandal.webp",
     ),
     Item(
-      name: "Stalls Sample",
+      name: "Stalls",
       price: 200.0,
       isAvailable: false,
       category: "StageAndDecore",
@@ -32,7 +32,7 @@ class HomePageController extends GetxController {
       image: "assets/stalls.webp",
     ),
     Item(
-      name: "Flower Decore Sample",
+      name: "Flower Decore",
       price: 100.0,
       isAvailable: true,
       category: "StageAndDecore",
@@ -40,7 +40,7 @@ class HomePageController extends GetxController {
       image: "assets/flowers.jpeg",
     ),
     Item(
-      name: "Podium Sample",
+      name: "Podium",
       price: 120.0,
       isAvailable: false,
       category: "StageAndDecore",
@@ -54,58 +54,4 @@ class HomePageController extends GetxController {
   RxList<Item> giftingAndMomentosList = <Item>[].obs;
   RxList<Item> eventGoodiesList = <Item>[].obs;
   RxList<Item> servicesList = <Item>[].obs;
-
-  Future<void> fetchAllTasks() async {
-    try {
-      String url = kApiUrl;
-      final response = await http.get(
-        Uri.parse(url),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      );
-
-      if (response.statusCode == 200) {
-        final Map<String, dynamic> responseData = jsonDecode(response.body);
-
-        final List<dynamic> items = responseData['items'];
-        updateItemList(items);
-
-        print('GET request successful!');
-      } else {
-        Get.snackbar("error", response.body);
-      }
-    } catch (error) {
-      print('Error sending GET request: $error');
-    }
-  }
-
-  void updateItemList(List<dynamic> items) {
-    items.forEach((item) {
-      if (item != null) {
-        Item newItem = Item(
-          name: item['name'] ?? '',
-          price: item['price'] ?? 0,
-          isAvailable: item['isAvailable'] ?? false,
-          category: item['category'] ?? '',
-          subCategory: item['subCategory'] ?? '',
-          image: item['image'] ?? '',
-        );
-
-        if (item['category'] == 'StageAndDecore') {
-          stageAndDecorList.add(newItem);
-        } else if (item['category'] == 'LightsAndSound') {
-          lightAndSoundList.add(newItem);
-        } else if (item['category'] == 'StationaryAndPrinting') {
-          stationaryAndPrintingList.add(newItem);
-        } else if (item['category'] == 'GiftingAndMomentos') {
-          giftingAndMomentosList.add(newItem);
-        } else if (item['category'] == 'EventGoodies') {
-          eventGoodiesList.add(newItem);
-        } else if (item['category'] == 'Services') {
-          servicesList.add(newItem);
-        }
-      }
-    });
-  }
 }
