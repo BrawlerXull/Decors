@@ -1,11 +1,93 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
-import 'package:malpani/constants/constants.dart';
 import 'package:malpani/model/ItemModel.dart';
 
 class HomePageController extends GetxController {
-  RxList<Item> itemsList = <Item>[].obs;
+  RxList<Item> giftingAndMomentosList = <Item>[
+    Item(
+      name: "Wooden Momentos Sample",
+      price: 150.0,
+      isAvailable: true,
+      category: "GiftingAndMomentos",
+      subCategory: "Wooden Momentos",
+      image: "wooden_momentos_image_url",
+    ),
+    Item(
+      name: "Glass Momentos Sample",
+      price: 200.0,
+      isAvailable: false,
+      category: "GiftingAndMomentos",
+      subCategory: "Glass Momentos",
+      image: "glass_momentos_image_url",
+    ),
+    Item(
+      name: "Frames Sample",
+      price: 80.0,
+      isAvailable: true,
+      category: "GiftingAndMomentos",
+      subCategory: "Frames",
+      image: "frames_image_url",
+    ),
+  ].obs;
+
+  RxList<Item> lightsAndSoundList = <Item>[
+    Item(
+      name: "Speakers & Base",
+      price: 700.0,
+      isAvailable: true,
+      category: "LightsAndSound",
+      subCategory: "Speakers & Base",
+      image: "speakers_base_image_url",
+    ),
+    Item(
+      name: "Mics",
+      price: 150.0,
+      isAvailable: false,
+      category: "LightsAndSound",
+      subCategory: "Mics",
+      image: "mics_image_url",
+    ),
+    Item(
+      name: "LED Screen",
+      price: 1200.0,
+      isAvailable: true,
+      category: "LightsAndSound",
+      subCategory: "LED Screen",
+      image: "led_screen_image_url",
+    ),
+    Item(
+      name: "Spot Lights",
+      price: 250.0,
+      isAvailable: true,
+      category: "LightsAndSound",
+      subCategory: "Spot Lights",
+      image: "spot_lights_image_url",
+    ),
+    Item(
+      name: "Lasers Lights",
+      price: 400.0,
+      isAvailable: true,
+      category: "LightsAndSound",
+      subCategory: "Lasers Lights",
+      image: "lasers_lights_image_url",
+    ),
+    Item(
+      name: "Kinetic Lights",
+      price: 800.0,
+      isAvailable: false,
+      category: "LightsAndSound",
+      subCategory: "Kinetic Lights",
+      image: "kinetic_lights_image_url",
+    ),
+    Item(
+      name: "Halogens",
+      price: 90.0,
+      isAvailable: true,
+      category: "LightsAndSound",
+      subCategory: "Halogens",
+      image: "halogens_image_url",
+    ),
+  ].obs;
+
   RxList<Item> stageAndDecorList = <Item>[
     Item(
       name: "Event Stage",
@@ -49,7 +131,6 @@ class HomePageController extends GetxController {
     ),
   ].obs;
 
-  RxList<Item> lightAndSoundList = <Item>[].obs;
   RxList<Item> stationaryAndPrintingList = <Item>[
     Item(
       name: "Event Backdrops & Flexes",
@@ -140,10 +221,10 @@ class HomePageController extends GetxController {
       image: "miscellaneous_image_url",
     ),
   ].obs;
-  RxList<Item> giftingAndMomentosList = <Item>[].obs;
+
   RxList<Item> eventGoodiesList = <Item>[
     Item(
-      name: "Hoodies with Print Sample",
+      name: "Hoodies with Print",
       price: 40.0,
       isAvailable: true,
       category: "EventGoodies",
@@ -151,7 +232,7 @@ class HomePageController extends GetxController {
       image: "hoodies_with_print_image_url",
     ),
     Item(
-      name: "T-shirts with Print Sample",
+      name: "T-shirts with Print",
       price: 20.0,
       isAvailable: false,
       category: "EventGoodies",
@@ -159,7 +240,7 @@ class HomePageController extends GetxController {
       image: "tshirts_with_print_image_url",
     ),
     Item(
-      name: "Hoodies without Print Sample",
+      name: "Hoodies without Print",
       price: 35.0,
       isAvailable: true,
       category: "EventGoodies",
@@ -167,7 +248,7 @@ class HomePageController extends GetxController {
       image: "hoodies_without_print_image_url",
     ),
     Item(
-      name: "T-shirts without Print Sample",
+      name: "T-shirts without Print",
       price: 15.0,
       isAvailable: true,
       category: "EventGoodies",
@@ -175,7 +256,7 @@ class HomePageController extends GetxController {
       image: "tshirts_without_print_image_url",
     ),
     Item(
-      name: "Badges Sample",
+      name: "Badges",
       price: 2.0,
       isAvailable: true,
       category: "EventGoodies",
@@ -183,7 +264,7 @@ class HomePageController extends GetxController {
       image: "badges_image_url",
     ),
     Item(
-      name: "Jerseys Sample",
+      name: "Jerseys",
       price: 25.0,
       isAvailable: false,
       category: "EventGoodies",
@@ -191,7 +272,7 @@ class HomePageController extends GetxController {
       image: "jerseys_image_url",
     ),
     Item(
-      name: "Medals Sample",
+      name: "Medals",
       price: 8.0,
       isAvailable: true,
       category: "EventGoodies",
@@ -199,7 +280,7 @@ class HomePageController extends GetxController {
       image: "medals_image_url",
     ),
     Item(
-      name: "Certificates Sample",
+      name: "Certificates",
       price: 5.0,
       isAvailable: true,
       category: "EventGoodies",
