@@ -85,6 +85,10 @@ flutter:
    - family: KDam
      fonts:
        - asset: fonts/Kdam.ttf
+
+   - family: Aprilia
+     fonts:
+       - asset: fonts/Aprilia.otf
   
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
