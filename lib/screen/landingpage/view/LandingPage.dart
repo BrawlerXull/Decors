@@ -24,7 +24,7 @@ class _LandingPageState extends State<LandingPage> {
                 child: Hero(
               tag: "title",
               child: Text(
-                "Malpani Decors",
+                "Event Essence",
                 style: TextStyle(
                     fontFamily: 'KDam',
                     fontSize: 30,

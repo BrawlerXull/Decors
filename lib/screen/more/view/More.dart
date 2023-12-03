@@ -24,7 +24,6 @@ class More extends StatefulWidget {
 class _MoreState extends State<More> {
   @override
   Widget build(BuildContext context) {
-    print(widget.itemList);
     return Scaffold(
       backgroundColor: Color(0xFFd7eff9),
       appBar: AppBar(
@@ -84,6 +83,7 @@ class _ItemTileState extends State<ItemTile> {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 7, horizontal: 8),
       decoration: BoxDecoration(
+        color: kTileBackgroudColor,
         borderRadius: BorderRadius.circular(10),
         border: const Border(
           right: BorderSide(width: 4, color: Colors.black),
@@ -108,7 +108,7 @@ class _ItemTileState extends State<ItemTile> {
                       widget.cartController.cartItems.remove(widget.item);
                     }
                   },
-                  icon: Icon(Icons.remove),
+                  icon: const Icon(Icons.remove),
                 ),
                 Text(widget.controller.quantity.toString()),
                 IconButton(

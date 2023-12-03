@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:malpani/constants/constants.dart';
 import 'package:malpani/model/ItemModel.dart';
 import 'package:malpani/screen/more/controller/ShoppingCartController.dart';
 
@@ -23,86 +24,91 @@ class _CartPageState extends State<CartPage> {
     double totalCartPrice = widget.cartController.totalPrice;
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 149, 226, 175),
+      backgroundColor: kBackgroundcolor,
       appBar: AppBar(
-        title: Text('Shopping Cart'),
-        backgroundColor: Color.fromARGB(255, 149, 226, 175),
+        title: const Text('Shopping Cart'),
+        backgroundColor: kBackgroundcolor,
       ),
       body: Column(
         children: [
-          Expanded(
-            child: ListView.builder(
-              itemCount: groupedItems.length,
-              itemBuilder: (context, index) {
-                var itemName = groupedItems.keys.elementAt(index);
-                var itemQuantity = groupedItems[itemName]!.length;
-                var totalPrice = groupedItems[itemName]!
-                    .map((item) => item.price)
-                    .reduce((value, element) => value + element);
+          widget.cartController.cartItems.isEmpty
+              ? const Expanded(
+                  child: Align(
+                    child: Text("Empty"),
+                  ),
+                )
+              : Expanded(
+                  child: ListView.builder(
+                    itemCount: groupedItems.length,
+                    itemBuilder: (context, index) {
+                      var itemName = groupedItems.keys.elementAt(index);
+                      var itemQuantity = groupedItems[itemName]!.length;
+                      var totalPrice = groupedItems[itemName]!
+                          .map((item) => item.price)
+                          .reduce((value, element) => value + element);
 
-                return Container(
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 7, horizontal: 8),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: const Border(
-                      right: BorderSide(width: 4, color: Colors.black),
-                      top: BorderSide(width: 2, color: Colors.black),
-                      left: BorderSide(width: 2, color: Colors.black),
-                      bottom: BorderSide(width: 4, color: Colors.black),
-                    ),
-                    color: Color.fromARGB(255, 149, 226, 175),
-                  ),
-                  child: ListTile(
-                    title: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          itemName,
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
+                      return Container(
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 7, horizontal: 8),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: const Border(
+                            right: BorderSide(width: 4, color: Colors.black),
+                            top: BorderSide(width: 2, color: Colors.black),
+                            left: BorderSide(width: 2, color: Colors.black),
+                            bottom: BorderSide(width: 4, color: Colors.black),
+                          ),
+                          color: const Color.fromARGB(255, 149, 226, 175),
                         ),
-                        Row(
-                          children: [
-                            IconButton(
-                              onPressed: () {
-                                // Decrease quantity
-                                widget.cartController.cartItems
-                                    .remove(groupedItems[itemName]!.first);
-                                setState(() {});
-                              },
-                              icon: Icon(Icons.remove),
-                            ),
-                            Text(itemQuantity.toString()),
-                            IconButton(
-                              onPressed: () {
-                                // Increase quantity
-                                widget.cartController.cartItems
-                                    .add(groupedItems[itemName]!.first);
-                                setState(() {});
-                              },
-                              icon: Icon(Icons.add),
-                            ),
-                          ],
+                        child: ListTile(
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                itemName,
+                                style: const TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.bold),
+                              ),
+                              Row(
+                                children: [
+                                  IconButton(
+                                    onPressed: () {
+                                      widget.cartController.cartItems.remove(
+                                          groupedItems[itemName]!.first);
+                                      setState(() {});
+                                    },
+                                    icon: const Icon(Icons.remove),
+                                  ),
+                                  Text(itemQuantity.toString()),
+                                  IconButton(
+                                    onPressed: () {
+                                      widget.cartController.cartItems
+                                          .add(groupedItems[itemName]!.first);
+                                      setState(() {});
+                                    },
+                                    icon: const Icon(Icons.add),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          subtitle: Text(
+                            '₹${totalPrice.toStringAsFixed(2)}',
+                            style: const TextStyle(
+                                fontSize: 14, color: Colors.black),
+                          ),
                         ),
-                      ],
-                    ),
-                    subtitle: Text(
-                      '₹${totalPrice.toStringAsFixed(2)}',
-                      style: TextStyle(fontSize: 14, color: Colors.black),
-                    ),
+                      );
+                    },
                   ),
-                );
-              },
-            ),
-          ),
-          SizedBox(height: 20),
+                ),
+          const SizedBox(height: 20),
           Text(
             'Total Cart Price: ₹${totalCartPrice.toStringAsFixed(2)}',
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
         ],
       ),
     );
