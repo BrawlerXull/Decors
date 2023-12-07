@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:malpani/utils/constants.dart';
+import 'package:malpani/utils/titleEnum.dart';
 import 'package:malpani/widget/MainPageGridTile.dart';
 
 class MainPage extends StatelessWidget {
@@ -10,9 +12,9 @@ class MainPage extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/Event Essence.jpg'),
+                image: AssetImage(Utils.kBackgroundImage),
                 fit: BoxFit.cover,
               ),
             ),
@@ -55,8 +57,9 @@ class MainPage extends StatelessWidget {
                     padding: const EdgeInsets.all(16.0),
                     itemCount: 6,
                     itemBuilder: (BuildContext context, int index) {
-                      return const MainPageGridTile(
-                        title: "Stage & Decore",
+                      List<TitleType> values = TitleType.values;
+                      return MainPageGridTile(
+                        title: values[index].title,
                       );
                     },
                   ),

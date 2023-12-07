@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:malpani/screen/mainpage/view/MainPage.dart';
+import 'package:malpani/utils/constants.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -26,9 +27,9 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         children: [
           Container(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/Event Essence.jpg"),
+                image: AssetImage(Utils.kBackgroundImage),
                 fit: BoxFit.cover,
               ),
             ),

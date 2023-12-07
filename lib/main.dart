@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
-import 'package:malpani/constants/routes.dart';
+import 'package:malpani/utils/routes.dart';
 
 Future<void> main() async {
   await dotenv.load();
@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialRoute: initialPage,
-      getPages: pages,
+      initialRoute: Routes.initialPage,
+      getPages: Routes.pages,
     );
   }
 }
