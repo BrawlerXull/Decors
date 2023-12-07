@@ -45,31 +45,20 @@ class MainPage extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  child: GridView.count(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 16.0,
-                    mainAxisSpacing: 16.0,
+                  child: GridView.builder(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 16.0,
+                      mainAxisSpacing: 16.0,
+                    ),
                     padding: const EdgeInsets.all(16.0),
-                    children: const [
-                      MainPageGridTile(
+                    itemCount: 6,
+                    itemBuilder: (BuildContext context, int index) {
+                      return const MainPageGridTile(
                         title: "Stage & Decore",
-                      ),
-                      MainPageGridTile(
-                        title: "Stage & Decore",
-                      ),
-                      MainPageGridTile(
-                        title: "Stage & Decore",
-                      ),
-                      MainPageGridTile(
-                        title: "Stage & Decore",
-                      ),
-                      MainPageGridTile(
-                        title: "Stage & Decore",
-                      ),
-                      MainPageGridTile(
-                        title: "Stage & Decore",
-                      ),
-                    ],
+                      );
+                    },
                   ),
                 ),
               ],

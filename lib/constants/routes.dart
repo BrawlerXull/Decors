@@ -1,7 +1,4 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
-import 'package:malpani/screen/homepage/view/HomePage.dart';
-import 'package:malpani/screen/landingpage/view/LandingPage.dart';
-import 'package:malpani/screen/more/view/More.dart';
 import 'package:malpani/screen/splashscreen/view/SplashScreen.dart';
 
 String initialPage = "/splash";
