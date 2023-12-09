@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:malpani/screen/innerpage/view/InnerPage.dart';
@@ -17,7 +18,9 @@ class MainPageGridTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.toNamed(Routes.INNER, arguments: titleType);
+        Get.toNamed(Routes.INNER, arguments: {
+          'titletype': titleType,
+        });
       },
       child: Column(
         children: [
@@ -26,7 +29,10 @@ class MainPageGridTile extends StatelessWidget {
             width: 100,
             decoration: BoxDecoration(border: Border.all(width: 2)),
           ),
-          Text(title),
+          Text(
+            title,
+            style: TextStyle(fontFamily: 'CuteFont', fontSize: 20),
+          ),
         ],
       ),
     );

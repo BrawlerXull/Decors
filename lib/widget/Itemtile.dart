@@ -22,14 +22,13 @@ class ItemTile extends StatelessWidget {
     final InnerPageController controller = Get.find<InnerPageController>();
 
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 7, horizontal: 8),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        border: const Border(
-          right: BorderSide(width: 4, color: Colors.black),
+      margin: const EdgeInsets.symmetric(vertical: 7, horizontal: 8),
+      decoration: const BoxDecoration(
+        border: Border(
+          right: BorderSide(width: 2, color: Colors.black),
           top: BorderSide(width: 2, color: Colors.black),
           left: BorderSide(width: 2, color: Colors.black),
-          bottom: BorderSide(width: 4, color: Colors.black),
+          bottom: BorderSide(width: 2, color: Colors.black),
         ),
       ),
       child: Padding(
@@ -42,21 +41,27 @@ class ItemTile extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {
-                      controller.stageAndDecorTotalCost -= item.price.toInt();
-                      controller.stageAndDecorSelectedItems.remove(item);
+                      if (controller.getSelectedItemCount(item, titleType) !=
+                          0) {
+                        controller.removeItem(item, titleType);
+                      }
                     },
-                    icon: Icon(Icons.remove),
+                    icon: const Icon(Icons.remove),
                   ),
-                  Text(controller.stageAndDecorSelectedItems
-                      .where((selectedItem) => selectedItem == item)
-                      .length
+                  Text(controller
+                      .getSelectedItemCount(item, titleType)
                       .toString()),
                   IconButton(
                     onPressed: () {
-                      controller.stageAndDecorTotalCost += item.price.toInt();
-                      controller.stageAndDecorSelectedItems.add(item);
+                      // if (controller.getTotalCost() < budget) {
+                      controller.addItem(item, titleType);
+                      // }
+                      //  else {
+                      // Get.snackbar("Budget Exceeded",
+                      // 'Current buget is $budget adding the next item will make it ${budget + item.price}');
+                      // }
                     },
-                    icon: Icon(Icons.add),
+                    icon: const Icon(Icons.add),
                   ),
                 ],
               ),

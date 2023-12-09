@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:malpani/utils/constants.dart';
+import 'package:malpani/utils/routes.dart';
 import 'package:malpani/utils/titleEnum.dart';
 import 'package:malpani/widget/MainPageGridTile.dart';
 
@@ -13,7 +15,15 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
+    final TextEditingController budgetController = TextEditingController();
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.toNamed(Routes.CART);
+        },
+        child: Icon(Icons.shopping_cart),
+        backgroundColor: const Color.fromARGB(255, 86, 191, 240),
+      ),
       body: Stack(
         children: [
           Container(
@@ -46,8 +56,10 @@ class _MainPageState extends State<MainPage> {
                     child: TextFormField(
                       textAlign: TextAlign.center,
                       decoration: const InputDecoration(
-                        hintText: "Search for faster reach :)",
+                        hintText: "Set your bugdet here :)",
                       ),
+                      controller: budgetController,
+                      keyboardType: TextInputType.number,
                     ),
                   ),
                 ),

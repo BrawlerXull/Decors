@@ -11,7 +11,7 @@ import 'package:malpani/widget/Itemtile.dart';
 class InnerPage extends GetView<InnerPageController> {
   @override
   Widget build(BuildContext context) {
-    final TitleType titleType = Get.arguments as TitleType;
+    final TitleType titleType = Get.arguments['titletype'] as TitleType;
     return Scaffold(
       body: Stack(
         children: [
@@ -28,10 +28,12 @@ class InnerPage extends GetView<InnerPageController> {
               Align(
                 child: Column(
                   children: [
-                    Text(
-                      titleType.title,
-                      style: const TextStyle(
-                        fontSize: 20,
+                    Padding(
+                      padding: const EdgeInsets.all(30.0),
+                      child: Text(
+                        titleType.title,
+                        style:
+                            const TextStyle(fontSize: 20, fontFamily: 'KDam'),
                       ),
                     ),
                   ],
@@ -41,8 +43,9 @@ class InnerPage extends GetView<InnerPageController> {
                 child: ListView.builder(
                   itemBuilder: (context, index) {
                     return ItemTile(
-                        item: controller.getList(titleType)[index],
-                        titleType: titleType);
+                      item: controller.getList(titleType)[index],
+                      titleType: titleType,
+                    );
                   },
                   itemCount: controller.getList(titleType).length,
                 ),
