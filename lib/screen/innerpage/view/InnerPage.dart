@@ -1,9 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:animated_text_kit/animated_text_kit.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:malpani/screen/innerpage/controller/InnerPageController.dart';
-import 'package:malpani/screen/mainpage/view/MainPage.dart';
 import 'package:malpani/utils/constants.dart';
 import 'package:malpani/utils/titleEnum.dart';
 import 'package:malpani/widget/Itemtile.dart';

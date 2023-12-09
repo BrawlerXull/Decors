@@ -191,52 +191,51 @@ class InnerPageController extends GetxController {
   List<Item> servicesList = <Item>[].obs;
 
   RxList<Item> totalItemsInTheCart = <Item>[].obs;
-
   @override
   void onInit() {
     print('Inner page controller initialised');
     stageAndDecorsList = stageAndDecors.map((data) {
       return Item(
-        name: data["name"] ?? "",
-        price: data["price"] ?? 0.0,
-        isAvailable: data["isAvailable"] ?? false,
-        category: data["category"] ?? "",
-        subCategory: data["subCategory"] ?? "",
-        image: data["image"] ?? "",
-      );
+          name: data["name"] ?? "",
+          price: data["price"] ?? 0.0,
+          isAvailable: data["isAvailable"] ?? false,
+          category: data["category"] ?? "",
+          subCategory: data["subCategory"] ?? "",
+          image: data["image"] ?? "",
+          titleType: TitleType.stageAndDecors);
     }).toList();
 
     lightsAndSoundList = lightsAndSound.map((data) {
       return Item(
-        name: data["name"] ?? "",
-        price: data["price"] ?? 0.0,
-        isAvailable: data["isAvailable"] ?? false,
-        category: data["category"] ?? "",
-        subCategory: data["subCategory"] ?? "",
-        image: data["image"] ?? "",
-      );
+          name: data["name"] ?? "",
+          price: data["price"] ?? 0.0,
+          isAvailable: data["isAvailable"] ?? false,
+          category: data["category"] ?? "",
+          subCategory: data["subCategory"] ?? "",
+          image: data["image"] ?? "",
+          titleType: TitleType.lightsAndSound);
     }).toList();
 
     giftingAndMomentosList = giftingAndMomentos.map((data) {
       return Item(
-        name: data["name"] ?? "",
-        price: data["price"] ?? 0.0,
-        isAvailable: data["isAvailable"] ?? false,
-        category: data["category"] ?? "",
-        subCategory: data["subCategory"] ?? "",
-        image: data["image"] ?? "",
-      );
+          name: data["name"] ?? "",
+          price: data["price"] ?? 0.0,
+          isAvailable: data["isAvailable"] ?? false,
+          category: data["category"] ?? "",
+          subCategory: data["subCategory"] ?? "",
+          image: data["image"] ?? "",
+          titleType: TitleType.giftingAndMomentos);
     }).toList();
 
     servicesList = services.map((data) {
       return Item(
-        name: data["name"] ?? "",
-        price: data["price"] ?? 0.0,
-        isAvailable: data["isAvailable"] ?? false,
-        category: data["category"] ?? "",
-        subCategory: data["subCategory"] ?? "",
-        image: data["image"] ?? "",
-      );
+          name: data["name"] ?? "",
+          price: data["price"] ?? 0.0,
+          isAvailable: data["isAvailable"] ?? false,
+          category: data["category"] ?? "",
+          subCategory: data["subCategory"] ?? "",
+          image: data["image"] ?? "",
+          titleType: TitleType.services);
     }).toList();
 
     super.onInit();

@@ -21,7 +21,7 @@ class _MainPageState extends State<MainPage> {
         onPressed: () {
           Get.toNamed(Routes.CART);
         },
-        child: Icon(Icons.shopping_cart),
+        child: const Icon(Icons.shopping_cart),
         backgroundColor: const Color.fromARGB(255, 86, 191, 240),
       ),
       body: Stack(
@@ -38,11 +38,14 @@ class _MainPageState extends State<MainPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "#EventGameStrongerTogether",
-                  style: TextStyle(
-                    fontFamily: 'KDam',
-                    fontSize: 20,
+                const Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Text(
+                    "#EventGameStrongerTogether",
+                    style: TextStyle(
+                      fontFamily: 'KDam',
+                      fontSize: 20,
+                    ),
                   ),
                 ),
                 Padding(
