@@ -1,13 +1,23 @@
-import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:get/get.dart';
+import 'package:malpani/screen/innerpage/bindings/InnerPageBindings.dart';
+import 'package:malpani/screen/innerpage/view/InnerPage.dart';
 import 'package:malpani/screen/splashscreen/view/SplashScreen.dart';
 
-abstract final class Routes {
-  static String initialPage = "/splash";
+abstract class Routes {
+  static const SplashScreen initialPage = SplashScreen();
+
+  static const INNER = '/inner';
+  static const SPLASH = '/splash';
 
   static List<GetPage> pages = [
     GetPage(
-      name: '/splash',
+      name: Routes.SPLASH,
       page: () => const SplashScreen(),
+    ),
+    GetPage(
+      name: Routes.INNER,
+      page: () => InnerPage(),
+      binding: InnerPageBindings(),
     ),
   ];
 }

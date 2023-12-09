@@ -3,9 +3,14 @@ import 'package:malpani/utils/constants.dart';
 import 'package:malpani/utils/titleEnum.dart';
 import 'package:malpani/widget/MainPageGridTile.dart';
 
-class MainPage extends StatelessWidget {
-  const MainPage({Key? key});
+class MainPage extends StatefulWidget {
+  const MainPage({Key? key}) : super(key: key);
 
+  @override
+  _MainPageState createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,6 +65,7 @@ class MainPage extends StatelessWidget {
                       List<TitleType> values = TitleType.values;
                       return MainPageGridTile(
                         title: values[index].title,
+                        titleType: values[index],
                       );
                     },
                   ),

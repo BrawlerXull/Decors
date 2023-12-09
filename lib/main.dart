@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
+import 'package:malpani/screen/innerpage/bindings/InnerPageBindings.dart';
+import 'package:malpani/screen/splashscreen/view/SplashScreen.dart';
 import 'package:malpani/utils/routes.dart';
 
 Future<void> main() async {
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialRoute: Routes.initialPage,
+      home: Routes.initialPage,
       getPages: Routes.pages,
     );
   }
