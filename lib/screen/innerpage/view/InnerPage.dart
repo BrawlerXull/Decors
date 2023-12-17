@@ -1,5 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:malpani/screen/innerpage/controller/InnerPageController.dart';
@@ -39,14 +37,20 @@ class InnerPage extends GetView<InnerPageController> {
                 ),
               ),
               Expanded(
-                child: ListView.builder(
-                  itemBuilder: (context, index) {
+                child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 16.0,
+                    mainAxisSpacing: 16.0,
+                  ),
+                  padding: const EdgeInsets.all(16.0),
+                  itemCount: controller.getList(titleType).length,
+                  itemBuilder: (BuildContext context, int index) {
                     return ItemTile(
                       item: controller.getList(titleType)[index],
                       titleType: titleType,
                     );
                   },
-                  itemCount: controller.getList(titleType).length,
                 ),
               ),
               Container(

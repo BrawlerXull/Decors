@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:malpani/screen/cart/binding/CartPageBindings.dart';
 import 'package:malpani/screen/cart/view/CartPage.dart';
+import 'package:malpani/screen/contact/view/Contact.dart';
 import 'package:malpani/screen/innerpage/bindings/InnerPageBindings.dart';
 import 'package:malpani/screen/innerpage/view/InnerPage.dart';
 import 'package:malpani/screen/splashscreen/view/SplashScreen.dart';
@@ -11,8 +12,13 @@ abstract class Routes {
   static const INNER = '/inner';
   static const SPLASH = '/splash';
   static const CART = '/cart';
+  static const CONTACT = '/contact';
 
   static List<GetPage> pages = [
+    GetPage(
+      name: Routes.CONTACT,
+      page: () => const ContactUsPage(),
+    ),
     GetPage(
       name: Routes.SPLASH,
       page: () => const SplashScreen(),

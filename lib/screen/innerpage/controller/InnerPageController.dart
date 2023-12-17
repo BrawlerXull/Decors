@@ -5,7 +5,7 @@ import 'package:malpani/utils/titleEnum.dart';
 class InnerPageController extends GetxController {
   RxList<Map<String, dynamic>> stageAndDecors = [
     {
-      "name": "Event Stage Sample",
+      "name": "Event Stage ",
       "price": 500.0,
       "isAvailable": true,
       "category": "StageAndDecore",
@@ -13,7 +13,7 @@ class InnerPageController extends GetxController {
       "image": "event_stage_image_url"
     },
     {
-      "name": "Pandal & Fencing Sample",
+      "name": "Pandal & Fencing ",
       "price": 300.0,
       "isAvailable": true,
       "category": "StageAndDecore",
@@ -21,7 +21,7 @@ class InnerPageController extends GetxController {
       "image": "pandal_fencing_image_url"
     },
     {
-      "name": "Stalls Sample",
+      "name": "Stalls ",
       "price": 200.0,
       "isAvailable": false,
       "category": "StageAndDecore",
@@ -29,7 +29,7 @@ class InnerPageController extends GetxController {
       "image": "stalls_image_url"
     },
     {
-      "name": "Flower Decore Sample",
+      "name": "Flower Decore ",
       "price": 100.0,
       "isAvailable": true,
       "category": "StageAndDecore",
@@ -37,7 +37,7 @@ class InnerPageController extends GetxController {
       "image": "flower_decore_image_url"
     },
     {
-      "name": "Podium Sample",
+      "name": "Podium ",
       "price": 120.0,
       "isAvailable": false,
       "category": "StageAndDecore",
@@ -48,7 +48,7 @@ class InnerPageController extends GetxController {
 
   RxList<Map<String, dynamic>> lightsAndSound = [
     {
-      "name": "Speakers & Base Sample",
+      "name": "Speakers & Base",
       "price": 700.0,
       "isAvailable": true,
       "category": "LightsAndSound",
@@ -56,7 +56,7 @@ class InnerPageController extends GetxController {
       "image": "speakers_base_image_url"
     },
     {
-      "name": "Mics Sample",
+      "name": "Mics",
       "price": 150.0,
       "isAvailable": false,
       "category": "LightsAndSound",
@@ -64,7 +64,7 @@ class InnerPageController extends GetxController {
       "image": "mics_image_url"
     },
     {
-      "name": "LED Screen Sample",
+      "name": "LED Screen",
       "price": 1200.0,
       "isAvailable": true,
       "category": "LightsAndSound",
@@ -72,7 +72,7 @@ class InnerPageController extends GetxController {
       "image": "led_screen_image_url"
     },
     {
-      "name": "Spot Lights Sample",
+      "name": "Spot Lights",
       "price": 250.0,
       "isAvailable": true,
       "category": "LightsAndSound",
@@ -80,7 +80,7 @@ class InnerPageController extends GetxController {
       "image": "spot_lights_image_url"
     },
     {
-      "name": "Lasers Lights Sample",
+      "name": "Lasers Lights",
       "price": 400.0,
       "isAvailable": true,
       "category": "LightsAndSound",
@@ -88,7 +88,7 @@ class InnerPageController extends GetxController {
       "image": "lasers_lights_image_url"
     },
     {
-      "name": "Kinetic Lights Sample",
+      "name": "Kinetic Lights",
       "price": 800.0,
       "isAvailable": false,
       "category": "LightsAndSound",
@@ -96,7 +96,7 @@ class InnerPageController extends GetxController {
       "image": "kinetic_lights_image_url"
     },
     {
-      "name": "Halogens Sample",
+      "name": "Halogens",
       "price": 90.0,
       "isAvailable": true,
       "category": "LightsAndSound",
@@ -107,7 +107,7 @@ class InnerPageController extends GetxController {
 
   RxList<Map<String, dynamic>> giftingAndMomentos = [
     {
-      "name": "Wooden Momentos Sample",
+      "name": "Wooden Momentos",
       "price": 150.0,
       "isAvailable": true,
       "category": "GiftingAndMomentos",
@@ -115,7 +115,7 @@ class InnerPageController extends GetxController {
       "image": "wooden_momentos_image_url"
     },
     {
-      "name": "Glass Momentos Sample",
+      "name": "Glass Momentos",
       "price": 200.0,
       "isAvailable": false,
       "category": "GiftingAndMomentos",
@@ -123,7 +123,7 @@ class InnerPageController extends GetxController {
       "image": "glass_momentos_image_url"
     },
     {
-      "name": "Frames Sample",
+      "name": "Frames",
       "price": 80.0,
       "isAvailable": true,
       "category": "GiftingAndMomentos",
@@ -134,7 +134,7 @@ class InnerPageController extends GetxController {
 
   RxList<Map<String, dynamic>> services = [
     {
-      "name": "Poster Designing Service",
+      "name": "Poster Designing",
       "price": 100.0,
       "isAvailable": true,
       "category": "Services",
@@ -142,7 +142,7 @@ class InnerPageController extends GetxController {
       "image": "poster_designing_service_image_url"
     },
     {
-      "name": "Photography Service",
+      "name": "Photography",
       "price": 500.0,
       "isAvailable": false,
       "category": "Services",
@@ -150,7 +150,7 @@ class InnerPageController extends GetxController {
       "image": "photography_service_image_url"
     },
     {
-      "name": "Videography Service",
+      "name": "Videography",
       "price": 800.0,
       "isAvailable": true,
       "category": "Services",
@@ -158,7 +158,7 @@ class InnerPageController extends GetxController {
       "image": "videography_service_image_url"
     },
     {
-      "name": "Judges Service",
+      "name": "Judges",
       "price": 1000.0,
       "isAvailable": true,
       "category": "Services",
@@ -166,7 +166,7 @@ class InnerPageController extends GetxController {
       "image": "judges_service_image_url"
     },
     {
-      "name": "Artists Service",
+      "name": "Artists",
       "price": 1200.0,
       "isAvailable": false,
       "category": "Services",
@@ -174,6 +174,172 @@ class InnerPageController extends GetxController {
       "image": "artists_service_image_url"
     }
   ].obs;
+
+  RxList<Map<String, dynamic>> eventGoodies = [
+    {
+      "name": "Hoodies with Print",
+      "price": 40.0,
+      "isAvailable": true,
+      "category": "EventGoodies",
+      "subCategory": "Hoodies with Print",
+      "image": "hoodies_with_print_image_url"
+    },
+    {
+      "name": "T-shirts with Print",
+      "price": 20.0,
+      "isAvailable": false,
+      "category": "EventGoodies",
+      "subCategory": "T-shirts with Print",
+      "image": "tshirts_with_print_image_url"
+    },
+    {
+      "name": "Hoodies without Print",
+      "price": 35.0,
+      "isAvailable": true,
+      "category": "EventGoodies",
+      "subCategory": "Hoodies without Print",
+      "image": "hoodies_without_print_image_url"
+    },
+    {
+      "name": "T-shirts without Print",
+      "price": 15.0,
+      "isAvailable": true,
+      "category": "EventGoodies",
+      "subCategory": "T-shirts without Print",
+      "image": "tshirts_without_print_image_url"
+    },
+    {
+      "name": "Badges",
+      "price": 2.0,
+      "isAvailable": true,
+      "category": "EventGoodies",
+      "subCategory": "Badges",
+      "image": "badges_image_url"
+    },
+    {
+      "name": "Jerseys",
+      "price": 25.0,
+      "isAvailable": false,
+      "category": "EventGoodies",
+      "subCategory": "Jerseys",
+      "image": "jerseys_image_url"
+    },
+    {
+      "name": "Medals",
+      "price": 8.0,
+      "isAvailable": true,
+      "category": "EventGoodies",
+      "subCategory": "Medals",
+      "image": "medals_image_url"
+    },
+    {
+      "name": "Certificates",
+      "price": 5.0,
+      "isAvailable": true,
+      "category": "EventGoodies",
+      "subCategory": "Certificates",
+      "image": "certificates_image_url"
+    }
+  ].obs;
+
+  RxList<Map<String, dynamic>> stationaryAndPrintingItems = [
+    {
+      "name": "Event Backdrops & Flexes",
+      "price": 300.0,
+      "isAvailable": true,
+      "category": "StationaryAndPrinting",
+      "subCategory": "Event Backdrops & Flexes",
+      "image": "event_backdrops_flexes_image_url"
+    },
+    {
+      "name": "Posters",
+      "price": 50.0,
+      "isAvailable": false,
+      "category": "StationaryAndPrinting",
+      "subCategory": "Posters",
+      "image": "posters_image_url"
+    },
+    {
+      "name": "Craft Sheets",
+      "price": 20.0,
+      "isAvailable": true,
+      "category": "StationaryAndPrinting",
+      "subCategory": "Craft Sheets",
+      "image": "craft_sheets_image_url"
+    },
+    {
+      "name": "Pens with print",
+      "price": 5.0,
+      "isAvailable": true,
+      "category": "StationaryAndPrinting",
+      "subCategory": "Pens with print",
+      "image": "pens_with_print_image_url"
+    },
+    {
+      "name": "Folders with print",
+      "price": 8.0,
+      "isAvailable": true,
+      "category": "StationaryAndPrinting",
+      "subCategory": "Folders with print",
+      "image": "folders_with_print_image_url"
+    },
+    {
+      "name": "Notepads with print",
+      "price": 6.0,
+      "isAvailable": false,
+      "category": "StationaryAndPrinting",
+      "subCategory": "Notepads with print",
+      "image": "notepads_with_print_image_url"
+    },
+    {
+      "name": "Pens without print",
+      "price": 3.0,
+      "isAvailable": true,
+      "category": "StationaryAndPrinting",
+      "subCategory": "Pens without print",
+      "image": "pens_without_print_image_url"
+    },
+    {
+      "name": "Folders without print",
+      "price": 5.0,
+      "isAvailable": true,
+      "category": "StationaryAndPrinting",
+      "subCategory": "Folders without print",
+      "image": "folders_without_print_image_url"
+    },
+    {
+      "name": "Notepads without print",
+      "price": 4.0,
+      "isAvailable": false,
+      "category": "StationaryAndPrinting",
+      "subCategory": "Notepads without print",
+      "image": "notepads_without_print_image_url"
+    },
+    {
+      "name": "ID cards & holders",
+      "price": 2.0,
+      "isAvailable": true,
+      "category": "StationaryAndPrinting",
+      "subCategory": "ID cards & holders",
+      "image": "id_cards_holders_image_url"
+    },
+    {
+      "name": "Miscellaneous",
+      "price": 10.0,
+      "isAvailable": true,
+      "category": "StationaryAndPrinting",
+      "subCategory": "Miscellaneous",
+      "image": "miscellaneous_image_url"
+    }
+  ].obs;
+
+  RxInt stationaryAndPrintingTotalCost = 0.obs;
+  RxList<Item> stationaryAndPrintingSelectedItems = <Item>[].obs;
+  List<Item> stationaryAndPrintingList = <Item>[].obs;
+
+  RxInt eventGoodiesTotalCost = 0.obs;
+  RxList<Item> eventGoodiesSelectedItems = <Item>[].obs;
+  List<Item> eventGoodiesList = <Item>[].obs;
 
   RxInt stageAndDecorTotalCost = 0.obs;
   RxInt giftingAndMomentosTotalCost = 0.obs;
@@ -238,6 +404,30 @@ class InnerPageController extends GetxController {
           titleType: TitleType.services);
     }).toList();
 
+    eventGoodiesList = eventGoodies.map((data) {
+      return Item(
+        name: data["name"] ?? "",
+        price: data["price"] ?? 0.0,
+        isAvailable: data["isAvailable"] ?? false,
+        category: data["category"] ?? "",
+        subCategory: data["subCategory"] ?? "",
+        image: data["image"] ?? "",
+        titleType: TitleType.eventGoodies,
+      );
+    }).toList();
+
+    stationaryAndPrintingList = stationaryAndPrintingItems.map((data) {
+      return Item(
+        name: data["name"] ?? "",
+        price: data["price"] ?? 0.0,
+        isAvailable: data["isAvailable"] ?? false,
+        category: data["category"] ?? "",
+        subCategory: data["subCategory"] ?? "",
+        image: data["image"] ?? "",
+        titleType: TitleType.stationaryAndPrinting,
+      );
+    }).toList();
+
     super.onInit();
   }
 
@@ -251,6 +441,10 @@ class InnerPageController extends GetxController {
         return giftingAndMomentosList;
       case TitleType.services:
         return servicesList;
+      case TitleType.eventGoodies:
+        return eventGoodiesList;
+      case TitleType.stationaryAndPrinting:
+        return stationaryAndPrintingList;
       default:
         return [];
     }
@@ -260,7 +454,9 @@ class InnerPageController extends GetxController {
     return stageAndDecorTotalCost.value +
         lightsAndSoundTotalCost.value +
         giftingAndMomentosTotalCost.value +
-        servicesTotalCost.value;
+        servicesTotalCost.value +
+        eventGoodiesTotalCost.value +
+        stationaryAndPrintingTotalCost.value;
   }
 
   void addItem(Item item, TitleType titleType) {
@@ -280,6 +476,13 @@ class InnerPageController extends GetxController {
       case TitleType.services:
         servicesTotalCost += item.price.toInt();
         servicesSelectedItems.add(item);
+        break;
+      case TitleType.eventGoodies:
+        eventGoodiesTotalCost += item.price.toInt();
+        eventGoodiesSelectedItems.add(item);
+      case TitleType.stationaryAndPrinting:
+        stationaryAndPrintingTotalCost += item.price.toInt();
+        stationaryAndPrintingSelectedItems.add(item);
         break;
       default:
         break;
@@ -307,6 +510,14 @@ class InnerPageController extends GetxController {
         servicesTotalCost -= itemPrice;
         servicesSelectedItems.remove(item);
         break;
+      case TitleType.eventGoodies:
+        eventGoodiesTotalCost -= itemPrice;
+        eventGoodiesSelectedItems.remove(item);
+        break;
+      case TitleType.stationaryAndPrinting:
+        stationaryAndPrintingTotalCost -= itemPrice;
+        stationaryAndPrintingSelectedItems.remove(item);
+        break;
       default:
         break;
     }
@@ -324,6 +535,12 @@ class InnerPageController extends GetxController {
     }
     if (servicesTotalCost < 0) {
       servicesTotalCost = 0.obs;
+    }
+    if (eventGoodiesTotalCost < 0) {
+      eventGoodiesTotalCost = 0.obs;
+    }
+    if (stationaryAndPrintingTotalCost < 0) {
+      stationaryAndPrintingTotalCost = 0.obs;
     }
     updateTotalItemsInTheCart();
   }
@@ -346,15 +563,27 @@ class InnerPageController extends GetxController {
         return servicesSelectedItems
             .where((selectedItem) => selectedItem == item)
             .length;
+      case TitleType.eventGoodies:
+        return eventGoodiesSelectedItems
+            .where((selectedItem) => selectedItem == item)
+            .length;
+      case TitleType.stationaryAndPrinting:
+        return stationaryAndPrintingSelectedItems
+            .where((selectedItem) => selectedItem == item)
+            .length;
       default:
         return 0;
     }
   }
 
   void updateTotalItemsInTheCart() {
-    totalItemsInTheCart = lightsAndSoundSelectedItems +
-        servicesSelectedItems +
-        stageAndDecorSelectedItems +
-        giftingAndMomentosSelectedItems;
+    totalItemsInTheCart = [
+      ...servicesSelectedItems,
+      ...stageAndDecorSelectedItems,
+      ...giftingAndMomentosSelectedItems,
+      ...lightsAndSoundSelectedItems,
+      ...eventGoodiesSelectedItems,
+      ...stationaryAndPrintingSelectedItems
+    ].obs;
   }
 }

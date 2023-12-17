@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    Future.delayed(const Duration(seconds: 4), () {
+    Future.delayed(const Duration(seconds: 3), () {
       Get.off(() => MainPage());
     });
   }
@@ -38,22 +38,25 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              AnimatedTextKit(
-                animatedTexts: [
-                  TyperAnimatedText(
-                    'Event Essence',
-                    textStyle: const TextStyle(
-                      fontSize: 60.0,
-                      fontFamily: 'Aprilia',
-                      color: Color(0xFF3F5888),
+              Hero(
+                tag: 1,
+                child: AnimatedTextKit(
+                  animatedTexts: [
+                    TyperAnimatedText(
+                      'Event Essence',
+                      textStyle: const TextStyle(
+                        fontSize: 60.0,
+                        fontFamily: 'Aprilia',
+                        color: Color(0xFF3F5888),
+                      ),
+                      speed: const Duration(milliseconds: 50),
                     ),
-                    speed: const Duration(milliseconds: 100),
-                  ),
-                ],
-                totalRepeatCount: 1,
-                pause: const Duration(milliseconds: 1000),
-                displayFullTextOnTap: true,
-                stopPauseOnTap: true,
+                  ],
+                  totalRepeatCount: 1,
+                  pause: const Duration(milliseconds: 100),
+                  displayFullTextOnTap: true,
+                  stopPauseOnTap: true,
+                ),
               ),
               AnimatedTextKit(
                 animatedTexts: [
@@ -63,11 +66,11 @@ class _SplashScreenState extends State<SplashScreen> {
                         fontFamily: 'CuteFont',
                         fontSize: 30.0,
                         color: Color(0xFF004AAD)),
-                    speed: const Duration(milliseconds: 100),
+                    speed: const Duration(milliseconds: 80),
                   ),
                 ],
                 totalRepeatCount: 1,
-                pause: const Duration(milliseconds: 1000),
+                pause: const Duration(milliseconds: 100),
                 displayFullTextOnTap: true,
                 stopPauseOnTap: true,
               ),

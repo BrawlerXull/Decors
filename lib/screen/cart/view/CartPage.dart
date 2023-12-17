@@ -34,19 +34,29 @@ class CartPage extends GetView<InnerPageController> {
                   ],
                 ),
               ),
-              Expanded(
-                child: Obx(() => ListView.builder(
-                      itemBuilder: (context, index) {
-                        Set<Item> uniqueItems =
-                            controller.totalItemsInTheCart.toSet();
-                        List<Item> uniqueItemList = uniqueItems.toList();
-                        return ItemTile(
-                          item: uniqueItemList[index],
-                          titleType: uniqueItemList[index].titleType,
-                        );
-                      },
-                      itemCount: controller.totalItemsInTheCart.toSet().length,
-                    )),
+              Obx(
+                () => Expanded(
+                  child: GridView.builder(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 8.0,
+                      mainAxisSpacing: 8.0,
+                    ),
+                    itemBuilder: (context, index) {
+                      return ItemTile(
+                        item: controller.totalItemsInTheCart
+                            .toSet()
+                            .toList()[index],
+                        titleType: controller.totalItemsInTheCart
+                            .toSet()
+                            .toList()[index]
+                            .titleType,
+                      );
+                    },
+                    itemCount: controller.totalItemsInTheCart.toSet().length,
+                  ),
+                ),
               ),
               Container(
                 margin: const EdgeInsets.all(16),

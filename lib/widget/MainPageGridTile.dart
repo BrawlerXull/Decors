@@ -26,11 +26,18 @@ class MainPageGridTile extends StatelessWidget {
           Container(
             height: 100,
             width: 100,
-            decoration: BoxDecoration(border: Border.all(width: 2)),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(
+                width: 2,
+                color: Colors.blue,
+              ),
+            ),
+            child: Image.asset('assets/logo.png'),
           ),
           Text(
             title,
-            style: TextStyle(fontFamily: 'CuteFont', fontSize: 20),
+            style: TextStyle(fontFamily: 'CuteFont', fontSize: 20 ),
           ),
         ],
       ),

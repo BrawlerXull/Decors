@@ -38,6 +38,27 @@ class _MainPageState extends State<MainPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/logo.png',
+                      height: 50,
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    const Text(
+                      'Event Essence',
+                      style: TextStyle(
+                        fontSize: 40.0,
+                        fontFamily: 'Aprilia',
+                        color: Color(0xFF3F5888),
+                      ),
+                    ),
+                  ],
+                ),
                 const Padding(
                   padding: EdgeInsets.all(20.0),
                   child: Text(
@@ -45,24 +66,6 @@ class _MainPageState extends State<MainPage> {
                     style: TextStyle(
                       fontFamily: 'KDam',
                       fontSize: 20,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 60, vertical: 30),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(width: 2),
-                    ),
-                    height: 50,
-                    child: TextFormField(
-                      textAlign: TextAlign.center,
-                      decoration: const InputDecoration(
-                        hintText: "Set your bugdet here :)",
-                      ),
-                      controller: budgetController,
-                      keyboardType: TextInputType.number,
                     ),
                   ),
                 ),
@@ -75,7 +78,7 @@ class _MainPageState extends State<MainPage> {
                       mainAxisSpacing: 16.0,
                     ),
                     padding: const EdgeInsets.all(16.0),
-                    itemCount: 6,
+                    itemCount: TitleType.values.length,
                     itemBuilder: (BuildContext context, int index) {
                       List<TitleType> values = TitleType.values;
                       return MainPageGridTile(
@@ -85,6 +88,14 @@ class _MainPageState extends State<MainPage> {
                     },
                   ),
                 ),
+                TextButton(
+                  onPressed: () {
+                    Get.toNamed('/contact');
+                  },
+                  child: const Text(
+                    "Contact Us",
+                  ),
+                )
               ],
             ),
           ),
