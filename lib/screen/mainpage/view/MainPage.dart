@@ -38,27 +38,6 @@ class _MainPageState extends State<MainPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/logo.png',
-                      height: 50,
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    const Text(
-                      'Event Essence',
-                      style: TextStyle(
-                        fontSize: 40.0,
-                        fontFamily: 'Aprilia',
-                        color: Color(0xFF3F5888),
-                      ),
-                    ),
-                  ],
-                ),
                 const Padding(
                   padding: EdgeInsets.all(20.0),
                   child: Text(

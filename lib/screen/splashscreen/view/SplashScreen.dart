@@ -38,25 +38,26 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Hero(
-                tag: 1,
-                child: AnimatedTextKit(
-                  animatedTexts: [
-                    TyperAnimatedText(
-                      'Event Essence',
-                      textStyle: const TextStyle(
-                        fontSize: 60.0,
-                        fontFamily: 'Aprilia',
-                        color: Color(0xFF3F5888),
-                      ),
-                      speed: const Duration(milliseconds: 50),
+              Image.asset(
+                'assets/logo.png',
+                height: 100,
+              ),
+              AnimatedTextKit(
+                animatedTexts: [
+                  TyperAnimatedText(
+                    'Event Essence',
+                    textStyle: const TextStyle(
+                      fontSize: 60.0,
+                      fontFamily: 'Aprilia',
+                      color: Color(0xFF3F5888),
                     ),
-                  ],
-                  totalRepeatCount: 1,
-                  pause: const Duration(milliseconds: 100),
-                  displayFullTextOnTap: true,
-                  stopPauseOnTap: true,
-                ),
+                    speed: const Duration(milliseconds: 50),
+                  ),
+                ],
+                totalRepeatCount: 1,
+                pause: const Duration(milliseconds: 100),
+                displayFullTextOnTap: true,
+                stopPauseOnTap: true,
               ),
               AnimatedTextKit(
                 animatedTexts: [
